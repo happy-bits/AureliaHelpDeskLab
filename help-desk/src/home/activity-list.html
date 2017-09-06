@@ -2,7 +2,7 @@
     <ul>
       <li repeat.for="a of activity" class="activity">
         <!--Note: The activity type isn't the same as the route, how can we solve this?-->
-        <a route-href="route.bind: a.type; params.bind: { id: a.associatedId }">
+        <a route-href="route.bind: a.type | activityTypeToRoute; params.bind: { id: a.associatedId }">
           <div class="well">
             <div class="avatar">
               <img src="${a.createdBy.iconUrl}">
