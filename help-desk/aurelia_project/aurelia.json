@@ -56,6 +56,8 @@
           "aurelia-task-queue",
           "aurelia-templating",
           "aurelia-templating-binding",
+          "text",
+          "moment",
           {
             "name": "aurelia-templating-resources",
             "path": "../node_modules/aurelia-templating-resources/dist/amd",
@@ -72,7 +74,11 @@
             "main": "aurelia-testing",
             "env": "dev"
           },
-          "text"
+          {
+              "name": "aurelia-dialog",
+              "path": "../node_modules/aurelia-dialog/dist/amd",
+              "main": "aurelia-dialog"
+          }
         ]
       }
     ],

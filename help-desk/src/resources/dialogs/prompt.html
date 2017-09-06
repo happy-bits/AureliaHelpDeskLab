@@ -1,0 +1,17 @@
+<template>
+  <ux-dialog>
+    <ux-dialog-header>${model.title}</ux-dialog-header>
+
+    <ux-dialog-body>
+      <p>${model.message}</p>
+      <form submit.trigger="ok()">
+        <input type="text" class="form-control" attach-focus="true" value.bind="answer">
+      </form>
+    </ux-dialog-body>
+
+    <ux-dialog-footer>
+      <button click.trigger="cancel()">Cancel</button>
+      <button click.trigger="ok()" disabled.bind="!answer">Ok</button>!
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>
