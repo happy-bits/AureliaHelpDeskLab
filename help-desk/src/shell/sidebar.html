@@ -1,0 +1,11 @@
+<template>
+  <div class="main-nav">
+    <ul class="nav nav-list">
+      <li repeat.for="item of router.navigation" class="${items.isActive?'active':''}" > 
+        <a href.bind="item.href">
+          <i class="fa ${item.settings.iconClass}"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</template>
