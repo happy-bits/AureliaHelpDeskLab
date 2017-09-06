@@ -15,9 +15,9 @@ export class Login {
   login() {
     this.server.login(this.username, this.password).then(result => {
       if (result) {
-        this.message = 'Login Succeeded';
-        this.aurelia.setRoot('shell/shell');
+        this.message = '';
         this.aurelia.use.instance(User, result);
+        this.aurelia.setRoot('shell/shell');
       } else {
         this.message = 'Incorrect Username or Password!';
       }
