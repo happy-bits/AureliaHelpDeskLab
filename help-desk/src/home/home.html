@@ -1,5 +1,6 @@
 <template>
   <require from="./activity-list.html"></require>
+  <require from="./news-list.html"></require>
 
   <div>
     <div class="header">
@@ -16,7 +17,7 @@
         <!--TODO: Add Charts Here-->
       </div>
       <div class="row2x2">
-        <!--TODO: Add News List Here-->
+        <news-list news.bind="news"></news-list>
       </div>
     </div>
   </div>

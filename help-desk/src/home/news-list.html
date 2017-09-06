@@ -1,0 +1,16 @@
+<template bindable="news" class="news">
+
+  <template repeat.for="n of news">
+
+    <h1>${n.title}</h1>
+    <p>${n.content}</p>
+    <div>
+      <span class="badge badge-success">${n.createdAt | date}</span>
+      <div class="pull-right">
+        <span class="badge" repeat.for="t of n.tags">${t}</span>
+      </div>
+    </div>
+    <hr>
+  </template>
+
+</template>
