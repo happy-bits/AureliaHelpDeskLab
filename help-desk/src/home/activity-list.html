@@ -10,7 +10,7 @@
             <div class="body">
               <div class="title" innerhtml.bind="a.title"></div>
               <div class="content">${a.content}</div>
-              <div class="date">${a.createdAt}</div> <!--TODO: Add better date format. -->
+              <div class="date">${a.createdAt | date}</div> <!--TODO: Add better date format. -->
             </div>
           </div>
         </a>

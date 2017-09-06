@@ -72,7 +72,8 @@
             "main": "aurelia-testing",
             "env": "dev"
           },
-          "text"
+          "text",
+          "moment"
         ]
       }
     ],
