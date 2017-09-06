@@ -1,6 +1,7 @@
 <template>
     <require from="./activity-list.html"></require>
     <require from="./news-list.html"></require>
+    <require from="./friend-list.html"></require>
 
     <div>
       <div class="header">
@@ -13,15 +14,18 @@
       </div>
 
       <div class="detail-container">
-        <div class="row1x2">
+        <div class="row1x3">
           <!--TODO: Add Charts Here-->
         </div>
-        <div class="row2x2">
+        <div class="row2x3">
 
           <!-- "news" fylls i vy-modellen mha anrop till servern "getNews" -->
 
          <news-list news.bind="news"></news-list>
+
+          <!-- friendsxxx är det namn som anges i template'n -->
+          <friend-list friendsxxx.bind="friends"></friend-list>
         </div>
-      </div>
+        </div>
     </div>
   </template>

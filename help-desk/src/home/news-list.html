@@ -4,7 +4,7 @@
     <h1>${n.title}</h1>
     <p>${n.content}</p>
     <div>
-      <span class="badge badge-success">${n.createdAt | date}</span>
+      <span class="badge badge-success">${n.createdAt}</span>
       <div class="pull-right">
         <!--One of these for each tag in the news.tags array.-->
         <span repeat.for="tag of n.tags" class="badge">${tag}</span>

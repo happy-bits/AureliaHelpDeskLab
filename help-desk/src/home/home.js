@@ -12,7 +12,9 @@ export class Home {
   activate() {
     return Promise.all([
       this.server.getRecentActivity().then(activity => this.activity = activity),
-      this.server.getNews().then(news => this.news = news)
+      this.server.getNews().then(news => this.news = news),
+      this.server.getFriends().then(friends => this.friends = friends)
+
     ]);
   }
 }

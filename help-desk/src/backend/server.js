@@ -282,4 +282,20 @@ export class Server {
       ];
     });
   }
+
+  getFriends() {
+      return wait().then(() => {
+
+          return [
+              {
+                name: "Pelle",
+                age: 18
+              },
+              {
+                name: "Kalle",
+                age: 14
+              }
+          ]
+      })
+  }
 }
