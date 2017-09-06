@@ -2,14 +2,16 @@ import {inject, Aurelia} from 'aurelia-framework';
 import {User} from 'backend/server';
 import {TabOpened} from 'resources/messages/tab-opened';
 import routes from './routes';
+import { CommonDialogs } from 'resources/dialogs/common-dialogs';
 
-@inject(Aurelia, User)
+@inject(Aurelia, User, CommonDialogs)
 export class Shell {
-  constructor(aurelia, user) {
+    constructor(aurelia, user, commonDialogs) {
     this.aurelia = aurelia;
     this.user = user;
     // represent the visual tabs
     this.tabs = [];
+    this.commonDialogs = commonDialogs;
   }
 
   configureRouter(config, router) {
@@ -64,7 +66,21 @@ export class Shell {
   }
 
   logout() {
-    //TODO: Implement open tab guard logic. Do logout by calling _doLogout()
+      if (this.tabs.length > 0) {
+          this.commonDialogs.showMessage(
+              'Tabs are open, you you want to close?',
+              'Logout',
+              ['Yes', 'No']
+          ).whenClosed(response => {
+              if (!response.wasCancelled) {
+                  this._doLogout()
+              }
+
+          });
+
+      } else {
+          this._doLogout();
+      }
   }
 
   _doLogout() {
