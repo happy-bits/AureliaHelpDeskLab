@@ -1,0 +1,13 @@
+<template>
+  <ux-dialog style="max-width: 325px">
+    <ux-dialog-header>${model.title}</ux-dialog-header>
+
+    <ux-dialog-body>
+      ${model.message}
+    </ux-dialog-body>
+
+    <ux-dialog-footer>
+      <button repeat.for="option of model.options" click.trigger="selectOption(option)">${option}</button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>
