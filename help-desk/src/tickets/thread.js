@@ -65,6 +65,8 @@ export class Thread {
   // important and some advanced navigation handling
   canActivate(params) {
 
+    // Anropas först (innan "activate" och innan vyn visas)
+
     // if its a new ticket we want to treat it little different - from query string
     if (params.id == 'new') {
       // we also want to check if its a title - from query string
@@ -92,12 +94,18 @@ export class Thread {
 
     // if its not a new ticket we will need to parse the id and try to load the ticket from the server
     return this.server.getTicketDetails(parseInt(params.id)).then(ticket => {
+
+      // När du tittar på en befintlig nyhet hamnar du här
+
       if (ticket) {
         // store ticket
         this.ticket = ticket;
         // get user
         this.from = this.getParticipant(ticket.fromId);
         // publish event that a tab opened
+
+        // Öppna en ny tab
+
         this.eventAggregator.publish(new TabOpened(ticket.title, 'thread', { id: ticket.id }));
         return true;
       }
@@ -108,10 +116,16 @@ export class Thread {
   }
 
   activate(params) {
+
+    // Anropas innan vyn visas
+
     this.message = '';
   }
 
   canDeactivate() {
+
+    // Anropas när vi lämnar sidan
+
     // check if ticket has been posted without a status
     if (this.ticket.id === 0) {
       let message = 'You have created a ticket but have not yet posted it with a status. If you leave now, your work will be lost. Do you wish to continue?'

@@ -13,6 +13,7 @@ export default [
     nav: true, 
     settings: { iconClass: 'fa-ticket' } 
   },
+  // Obs, tickets/123 => tickets/thread
   { 
     name: 'thread',
     route: 'tickets/:id', 

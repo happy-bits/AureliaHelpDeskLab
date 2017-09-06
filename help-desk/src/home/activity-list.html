@@ -3,6 +3,21 @@
     <li repeat.for="a of activity" class="activity">
       <!--Note: The activity type isn't the same as the route. How can we solve this?-->
       <a route-href="route.bind: a.type | activityTypeToRoute; params.bind: { id: a.associatedId }">
+
+        <!--
+            "activityTypeToRoute" är en value-converter (ligger under resources)
+            Omvandlar "ticket" ==> "thread"
+            -->
+        <div>Type: ${a.type},TypeToRoute: ${a.type | activityTypeToRoute} Id: ${a.associatedId}</div>
+
+        <!--"star" är en valueconverter som lägger till stjärnor
+            behöver definiera att den finns i "resources/index.js" -->
+        <div>Star: ${a.type | star}</div>
+
+        <!--
+            Detta skriver ger html-koden rå, som den är
+            <div>Title: ${a.title}</div>
+        -->
         <div class="well">
           <div class="avatar">
             <img src="${a.createdBy.iconUrl}">

@@ -1,3 +1,12 @@
 <template>
-  This is a ticket ${ticket.id}.
+  This is a ticket ${ticket.id}<br />
+
+  <b>Created at</b> ${ticket.createdAt}<br />
+  <b>FromId</b> ${ticket.fromId}<br />
+  <b>Type</b> ${ticket.type}<br />
+
+  <b>Participants</b>
+  <div repeat.for="p of ticket.participants">
+    ${p.firstName} ${p.lastName}
+  </div>
 </template>

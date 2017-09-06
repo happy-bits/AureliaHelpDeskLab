@@ -7,8 +7,8 @@ export class Login {
   constructor(aurelia, server) {
     this.aurelia = aurelia;
     this.server = server;
-    this.username = '';
-    this.password = '';
+    this.username = 'un';
+    this.password = 'pw';
     this.message = '';
   }
 
