@@ -1,3 +1,23 @@
 <template>
-  Home Screen Placeholder
+  <require from="./activity-list.html"></require>
+
+  <div>
+    <div class="header">
+      <div class="header-left">Activity</div>
+      <div class="header-right">Benchmarks &amp; News</div>
+    </div>
+
+    <div class="sidebar">
+      <activity-list activity.bind="activity"></activity-list>
+    </div>
+
+    <div class="detail-container">
+      <div class="row1x2">
+        <!--TODO: Add Charts Here-->
+      </div>
+      <div class="row2x2">
+        <!--TODO: Add News List Here-->
+      </div>
+    </div>
+  </div>
 </template>
