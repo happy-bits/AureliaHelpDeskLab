@@ -11,4 +11,9 @@ export class CommonDialogs {
   showMessage(message, title = 'Message', options = ['Ok']) {
     return this.dialogService.open({ viewModel: MessageBox, model: { message, title, options } });
   }
+
+  prompt(message, title = 'Message') {
+    return this.dialogService.open({ viewModel: Prompt, model: { message, title} });
+  }
+
 }
