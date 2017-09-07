@@ -14,6 +14,7 @@ export function configure(aurelia) {
   }
 
   aurelia.use.plugin('aurelia-dialog');
+  aurelia.use.plugin('aurelia-validation');
 
 
   aurelia.start().then(() => aurelia.setRoot('login/login'));
