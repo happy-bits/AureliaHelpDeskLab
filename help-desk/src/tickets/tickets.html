@@ -1,0 +1,27 @@
+<template>
+  <div class="header">
+    <div class="header-single">Tickets</div>
+  </div>
+
+  <!-- This is a custom element we are going to build. But this is how we would like to write the HTML in
+    order to create a simple data grid with data binding.
+    With the simplicity to just render out a propery in a cell but also the power to provide a custom rendered template, see below: -->
+  <data-grid items.bind="tickets">
+    <grid-column heading="Title">
+      <!-- Here we don't simple want to render out the title,
+           we want to have some html in this case create a link around the title.
+           In other words we want to provide our own template for that cell  -->
+      <a route-href="route: thread; params.bind: { id:item.id }">${item.title}</a>
+    </grid-column>
+    <grid-column heading="Submitted By">
+      ${item.participants[0].firstName} ${item.participants[0].lastName}
+    </grid-column>
+    <grid-column heading="Submitted On">
+      ${item.createdAt | date}
+    </grid-column>
+    <!-- Here we simply just want to render out the property -->
+    <grid-column heading="Type" property="type"></grid-column>
+    <grid-column heading="Status" property="status"></grid-column>
+    <grid-column heading="Priority" property="priority"></grid-column>
+  </data-grid>
+</template>
